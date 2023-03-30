@@ -1,0 +1,25 @@
+.nav-container {
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-image {
+  width: 90px;
+  height: 20px;
+  background-size: cover;
+}
+
+.nav-elements {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links {
+  margin: 0px 5px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
