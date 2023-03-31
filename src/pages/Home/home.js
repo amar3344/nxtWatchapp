@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 
 import {AiOutlineSearch} from 'react-icons/ai'
+import {IoMdClose} from 'react-icons/io'
 
 import Navbar from '../../components/Navbar/navbar'
 import Videos from '../../components/Videos/video'
@@ -22,9 +23,10 @@ const Home = () => {
   const [videosList, setVideoList] = useState([])
   const [currentApiStatus, setCurrentApiStatus] = useState(apiStatus.initial)
   const [searchInput, setSearchInput] = useState('')
+  const [displayDescription, setDisplayDescription] = useState(true)
 
   const getSuccessView = () => (
-    <ul>
+    <ul className="videos-container">
       {videosList.map(eachItem => (
         <Videos details={eachItem} key={eachItem.id} />
       ))}
@@ -43,7 +45,9 @@ const Home = () => {
 
     const res = await fetch(url, options)
     const data = await res.json()
-    if (res.ok === true) {
+    console.log(data)
+    console.log(res)
+    if (data.videos.length !== 0) {
       setVideoList(data.videos)
       setCurrentApiStatus(apiStatus.success)
     } else {
@@ -59,7 +63,20 @@ const Home = () => {
     </div>
   )
 
-  const getFailureView = () => {}
+  const getFailureView = () => (
+    <div className="failure-view">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
+        alt="no videos"
+        width={200}
+      />
+      <h3>No Search results found</h3>
+      <p>Try different words or remove search filter</p>
+      <button type="button" className="retry-button">
+        Retry
+      </button>
+    </div>
+  )
 
   const getYouTubeThumbNailsFromUrl = () => {
     switch (currentApiStatus) {
@@ -78,18 +95,37 @@ const Home = () => {
     setSearchInput(e.target.value)
   }
 
+  const getToggleButton = () => {
+    setDisplayDescription(prevState => !prevState)
+  }
+
+  const getResultsBySearchFilter = () => {
+    getSuccessViewFromApi()
+  }
+
   return (
     <div className="home-container">
       <Navbar />
       <div className="home-content-container">
-        <div className="header-container">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-            alt=""
-          />
-          <p>Buy Nxt Watch Premium prepaid plans with UPI</p>
-          <button type="button">GET IT NOW</button>
-        </div>
+        {displayDescription && (
+          <div className="header-container">
+            <div>
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                alt=""
+                className="nxt-wave-home-image"
+              />
+              <p className="home-tag-line">
+                Buy Nxt Watch Premium prepaid plans with UPI
+              </p>
+              <button type="button" className="home-button">
+                GET IT NOW
+              </button>
+            </div>
+            <IoMdClose onClick={getToggleButton} className="close-button" />
+          </div>
+        )}
+
         <div className="bottom-container">
           <div className="search-container">
             <input
@@ -97,8 +133,12 @@ const Home = () => {
               placeholder="Search"
               value={searchInput}
               onChange={getSearchInput}
+              className="home-search-input"
             />
-            <AiOutlineSearch />
+            <AiOutlineSearch
+              className="search-button"
+              onClick={getResultsBySearchFilter}
+            />
           </div>
           {getYouTubeThumbNailsFromUrl()}
         </div>

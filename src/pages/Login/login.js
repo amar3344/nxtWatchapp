@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 import './login.css'
@@ -9,6 +10,11 @@ const Login = props => {
   const [showPassword, setShowPassword] = useState(false)
   const [showErrorMessage, setShowErrorMessage] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const jwtToken = Cookies.get('jwt_token')
+
+  if (jwtToken !== undefined) {
+    return <Redirect to="/" />
+  }
 
   const getSuccessfulLoginFrom = token => {
     Cookies.set('jwt_token', token, {expires: 1})
@@ -34,8 +40,8 @@ const Login = props => {
       setErrorMessage(data.error_msg)
       setShowErrorMessage(true)
     }
-    console.log(res)
-    console.log(data)
+    // console.log(res)
+    // console.log(data)
   }
 
   const getUserName = e => {
@@ -55,7 +61,7 @@ const Login = props => {
       <form className="form-container" onSubmit={getFormSubmission}>
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-          alt=""
+          alt="website logo"
           className="login-nxt-wave-logo"
         />
         <div className="input-container">

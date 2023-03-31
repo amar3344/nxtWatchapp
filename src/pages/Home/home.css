@@ -2,3 +2,109 @@
   width: 350px;
   background-color: #fff;
 }
+
+.header-container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container div {
+  width: 60%;
+}
+
+.nxt-wave-home-image {
+  width: 150px;
+  height: 30px;
+}
+
+.home-tag-line {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.home-button {
+  background-color: transparent;
+  padding: 10px;
+  border: 1px solid #1e293b;
+  color: #1e293b;
+  font-weight: bold;
+  font-size: 11px;
+  border-top: 1px solid #1e293b;
+  border-left: 1px solid #94a3b8;
+  border-right: 1px solid #94a3b8;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.bottom-container {
+  background-color: #f1f1f1;
+  padding: 20px 0px;
+}
+
+.search-container {
+  border: 1px solid #94a3b8;
+  text-align: center;
+  margin: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-search-input {
+  width: 100%;
+  border: none;
+  padding: 4px 20px;
+  color: #1e293b;
+}
+
+.search-button {
+  display: flex;
+  align-self: center;
+  background-color: transparent;
+  width: 50px;
+  cursor: pointer;
+}
+
+.videos-container {
+  margin: 0px;
+  padding: 20px 0px;
+}
+
+.close-button {
+  cursor: pointer;
+}
+
+.retry-button {
+  background-color: #00306e;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.failure-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.failure-view h3 {
+  color: #1e293b;
+  font-size: 15px;
+  margin: 5px 0px;
+}
+
+.failure-view p {
+  color: #94a3b8;
+  font-size: 12px;
+  margin: 5px 0px;
+}
