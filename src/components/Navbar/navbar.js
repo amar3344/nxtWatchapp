@@ -12,6 +12,8 @@ const Navbar = props => {
     const {history} = props
     history.replace('/login')
   }
+
+  const getSelectedButtons = () => {}
   return (
     <nav className="nav-container">
       <img
@@ -26,7 +28,11 @@ const Navbar = props => {
           </button>
         </li>
         <li>
-          <button type="button" className="nav-links">
+          <button
+            type="button"
+            className="nav-links"
+            onClick={getSelectedButtons}
+          >
             <FaBars />
           </button>
         </li>

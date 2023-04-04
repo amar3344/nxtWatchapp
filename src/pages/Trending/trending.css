@@ -1,0 +1,41 @@
+.trending-container {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.trending-logo-container {
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.trending-logo-container h3 {
+  color: #1e293b;
+  margin: 0px;
+  padding: 0px;
+  font-size: 13px;
+}
+
+.trending-image-container {
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+
+.trending-image {
+  width: 50px;
+  background-color: transparent;
+  color: red;
+  margin: 0px;
+  padding: 0px;
+}

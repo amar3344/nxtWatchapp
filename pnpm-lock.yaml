@@ -7,6 +7,7 @@ specifiers:
   '@testing-library/user-event': 12.6.2
   '@wojtekmaj/enzyme-adapter-react-17': 0.6.3
   babel-plugin-styled-components: 1.13.2
+  bootstrap-icons: 1.10.4
   chalk: 4.1.0
   date-fns: 2.23.0
   enzyme: 3.11.0
@@ -38,6 +39,7 @@ dependencies:
   '@testing-library/react': 11.2.5_react-dom@17.0.1+react@17.0.1
   '@testing-library/user-event': 12.6.2
   '@wojtekmaj/enzyme-adapter-react-17': 0.6.3_ed988ebff08079c40ff9e87e2acc78b3
+  bootstrap-icons: 1.10.4
   chalk: 4.1.0
   date-fns: 2.23.0
   enzyme: 3.11.0
@@ -4559,6 +4561,10 @@ packages:
 
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+
+  /bootstrap-icons/1.10.4:
+    resolution: {integrity: sha512-eI3HyIUmpGKRiRv15FCZccV+2sreGE2NnmH8mtxV/nPOzQVu0sPEj8HhF1MwjJ31IhjF0rgMvtYOX5VqIzcb/A==}
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
